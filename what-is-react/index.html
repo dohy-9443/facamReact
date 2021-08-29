@@ -5,13 +5,36 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Example</title>
+  <style>
+    * { margin: 0; padding: 0; border: none; }
+
+    #root p { color: white; font-size: 20px; background: green; text-align: center; width: 200px; }
+
+    #btn_plus { background: red; border: 2px solid #000; font-size: 15px; width: 200px; cursor: pointer; }
+  </style>
 </head>
 <body>
+  <div id="root"></div>
+  <button id="btn_plus">+</button>
+
   <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
   <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+  
   <script>
-    console.log(React);
-    console.log(ReactDOM);
+    // console.log(React);
+    // console.log(ReactDOM);
+
+    const root = document.querySelector('#root');
+    const btn_plus = document.querySelector('#btn_plus');
+
+    let i = 0;
+
+    root.innerHTML = `<p>init : 0</p>`;
+
+    btn_plus.addEventListener('click', () => {
+      root.innerHTML = `<p>init : ${++i}</p>`;
+    })
   </script>
+
 </body>
 </html>
