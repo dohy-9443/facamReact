@@ -27,8 +27,20 @@
     // );
 
     // 1. 태그 이름 문자열 type
+    // ReactDOM.render(
+    //   React.createElement('h1', null, `type 이 "태그 이름 문자열" 입니다.`),
+    //   document.querySelector('#root')
+    // );
+
+    // 2. 리액트 컴포넌트 type
+
+    const Component = () => {
+      return React.createElement('p', null, `type이 "React 컴포넌트" 입니다.`);
+    };
+
+    // <Component />
     ReactDOM.render(
-      React.createElement('h1', null, `type 이 "태그 이름 문자열" 입니다.`),
+      React.createElement(Component, null, null),
       document.querySelector('#root')
     );
   </script>
