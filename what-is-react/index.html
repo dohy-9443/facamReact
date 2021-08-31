@@ -39,7 +39,11 @@
       }
     }
 
-    ReactDOM.render(<Component message="안녕하세요."/>, document.querySelector('#root'));
+    Component.defaultProps = {
+      message: "기본값."
+    }
+
+    ReactDOM.render(<Component />, document.querySelector('#root'));
 
   </script>
 
