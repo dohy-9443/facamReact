@@ -55,9 +55,14 @@
 
       componentDidMount() {
         setTimeout(() => {
-          this.setState({
-            count: this.state.count + 1, 
-          })
+          // this.setState({
+          //   count: this.state.count + 1, 
+          // })
+
+          this.setState((previousState) => {
+            const newState = { count: previousState.count + 1 }
+            return newState;
+          });
         }, 1000)
       }
 
