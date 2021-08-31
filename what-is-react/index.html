@@ -37,11 +37,15 @@
           </div>
         );
       }
+
+      static defaultProps = {
+        message: "기본값2."
+      }
     }
 
-    Component.defaultProps = {
-      message: "기본값."
-    }
+    // Component.defaultProps = {
+    //   message: "기본값."
+    // }
 
     ReactDOM.render(<Component />, document.querySelector('#root'));
 
