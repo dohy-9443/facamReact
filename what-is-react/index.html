@@ -34,8 +34,14 @@
     // }
 
     class Component extends React.Component {
-      state = {
-        count: 0,
+      // state = {
+      //   count: 0,
+      // }
+
+      constructor(props) {
+        super(props);
+
+        this.state = { count: 0 }
       }
 
       render() {
