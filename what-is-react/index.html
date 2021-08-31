@@ -47,6 +47,14 @@
         );
       }
 
+      componentDidMount() {
+        setTimeout(() => {
+          this.setState({
+            count: this.state.count + 1, 
+          })
+        }, 1000)
+      }
+
       static defaultProps = {
         message: "기본값2."
       }
