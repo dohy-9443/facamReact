@@ -35,21 +35,21 @@
         return (
           <div>
             <h1>{this.state.count}</h1>
-            <button onClick={
-              () => {
-                console.log('clicked');
-                this.setState(
-                  (state) => ({ 
-                    ...state, 
-                    count: state.count + 1 
-                  })
-                )
-              }
-            }>
+            <button onClick={this.onClick}>
               click
             </button>
           </div>
         );
+      }
+
+      onClick= () => {
+        console.log('clicked');
+        this.setState(
+          (state) => ({ 
+            ...state, 
+            count: state.count + 1 
+          })
+        )
       }
     }
 
