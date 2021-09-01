@@ -21,10 +21,26 @@
     console.log(React);
     console.log(ReactDOM);
 
-    function Component() {
-      return <div><button onClick={() => {
-        console.log('clicked')
-      }}>click</button></div>;
+    // function Component() {
+    //   return <div><button onClick={() => {
+    //     console.log('clicked')
+    //   }}>click</button></div>;
+    // }
+
+    class Component extends React.Component {
+      render() {
+        return (
+          <div>
+            <button onClick={
+              () => {
+                console.log('clicked');
+              }
+            }>
+              click
+            </button>
+          </div>
+        );
+      }
     }
 
     ReactDOM.render(<Component />, document.querySelector('#root'));
