@@ -47,6 +47,10 @@
 
       componentDidMount() {
         console.log('componentDidMount');
+
+        setInterval(() => {
+          this.setState((state) => ({ ...state, age: state.age + 1 }));
+        }, 1000)
       }
     }
 
