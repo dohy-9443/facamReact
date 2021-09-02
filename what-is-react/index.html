@@ -25,6 +25,7 @@
       state = {
         age: 27,
       };
+      interval = null;
       constructor(props) {
         super(props);
 
@@ -48,25 +49,31 @@
       componentDidMount() {
         console.log('componentDidMount');
 
-        setInterval(() => {
+        this.interval = setInterval(() => {
           this.setState((state) => ({ ...state, age: state.age + 1 }));
         }, 1000)
       }
 
-      componentWillReceiveProps() {
-
+      componentWillReceiveProps(nextProps) {
+        console.log('componentWillReceiveProps', nextProps);
       }
 
-      shouldComponentUpdate() {
+      shouldComponentUpdate(nextProps, nextState) {
+        console.log('shouldComponentUpdate', nextProps, nextState);
 
+        return true;
       }
 
-      componentWillUpdate() {
-
+      componentWillUpdate(nextProps, nextState) {
+        console.log('componentWillUpdate', nextProps, nextState);
       }
 
-      componentDidUpdate() {
-        
+      componentDidUpdate(prevProps, prevState) {
+        console.log('componentDidUpdate', prevProps, prevState);
+      }
+
+      componentWillUnmount() {
+        clearInterval(this.interval);
       }
     }
 
