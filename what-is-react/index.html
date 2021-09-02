@@ -21,47 +21,7 @@
     console.log(React);
     console.log(ReactDOM);
 
-    // function Component() {
-    //   return <div><button onClick={() => {
-    //     console.log('clicked')
-    //   }}>click</button></div>;
-    // }
-
-    class Component extends React.Component {
-      state = {
-        count : 0,
-      }
-
-      // constructor(props) {
-      //   super(props);
-
-      //   this.onClick = this.onClick.bind(this);
-      // }
-
-      onClick = () => {
-        console.log('clicked');
-        this.setState(
-          (state) => ({ 
-            ...state, 
-            count: state.count + 1 
-          })
-        )
-      }
-
-      render() {
-        return (
-          <div>
-            <h1>{this.state.count}</h1>
-            <button onClick={this.onClick}>
-              click
-            </button>
-          </div>
-        );
-      }
-    }
-
-    ReactDOM.render(<Component />, document.querySelector('#root'));
-
+    
   </script>
 
 </body>
