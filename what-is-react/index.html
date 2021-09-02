@@ -40,6 +40,14 @@
           </div>
         );
       }
+
+      ComponentWillMount() {
+        console.log('componentWillMount');
+      }
+
+      componentDidMount() {
+        console.log('componentDidMount');
+      }
     }
 
     ReactDOM.render(<App name="Mark" />, document.querySelector('#root'));
