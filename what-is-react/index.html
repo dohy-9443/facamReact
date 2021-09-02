@@ -21,47 +21,63 @@
     console.log(React);
     console.log(ReactDOM);
 
-    // function Component() {
-    //   return <div><button onClick={() => {
-    //     console.log('clicked')
-    //   }}>click</button></div>;
-    // }
-
-    class Component extends React.Component {
+    class App extends React.Component {
       state = {
-        count : 0,
-      }
+        age: 27,
+      };
+      interval = null;
+      constructor(props) {
+        super(props);
 
-      // constructor(props) {
-      //   super(props);
-
-      //   this.onClick = this.onClick.bind(this);
-      // }
-
-      onClick = () => {
-        console.log('clicked');
-        this.setState(
-          (state) => ({ 
-            ...state, 
-            count: state.count + 1 
-          })
-        )
-      }
+        console.log('constructor', props);
+      };
 
       render() {
-        return (
+        console.log('render');
+
+        return(
           <div>
-            <h1>{this.state.count}</h1>
-            <button onClick={this.onClick}>
-              click
-            </button>
+            <h2>Hello {this.props.name} - {this.state.age}</h2>
           </div>
         );
       }
+
+      ComponentWillMount() {
+        console.log('componentWillMount');
+      }
+
+      componentDidMount() {
+        console.log('componentDidMount');
+
+        this.interval = setInterval(() => {
+          this.setState((state) => ({ ...state, age: state.age + 1 }));
+        }, 1000)
+      }
+
+      componentWillReceiveProps(nextProps) {
+        console.log('componentWillReceiveProps', nextProps);
+      }
+
+      shouldComponentUpdate(nextProps, nextState) {
+        console.log('shouldComponentUpdate', nextProps, nextState);
+
+        return true;
+      }
+
+      componentWillUpdate(nextProps, nextState) {
+        console.log('componentWillUpdate', nextProps, nextState);
+      }
+
+      componentDidUpdate(prevProps, prevState) {
+        console.log('componentDidUpdate', prevProps, prevState);
+      }
+
+      componentWillUnmount() {
+        clearInterval(this.interval);
+      }
     }
 
-    ReactDOM.render(<Component />, document.querySelector('#root'));
-
+    ReactDOM.render(<App name="Mark" />, document.querySelector('#root'));
   </script>
 
 </body>
