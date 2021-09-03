@@ -42,8 +42,15 @@
         );
       }
 
-      ComponentWillMount() {
-        console.log('componentWillMount');
+      // ComponentWillMount() {
+      //   console.log('componentWillMount');
+      // }
+      
+      // 위가 아래처럼 바뀜
+      static getDerivedStateFromProps(nextProps, prevState) {
+        console.log('getDerivedStateFromProps', nextProps, prevState);
+
+        return null;
       }
 
       componentDidMount() {
@@ -54,9 +61,9 @@
         }, 1000)
       }
 
-      componentWillReceiveProps(nextProps) {
-        console.log('componentWillReceiveProps', nextProps);
-      }
+      // componentWillReceiveProps(nextProps) {
+      //   console.log('componentWillReceiveProps', nextProps);
+      // }
 
       shouldComponentUpdate(nextProps, nextState) {
         console.log('shouldComponentUpdate', nextProps, nextState);
@@ -64,9 +71,9 @@
         return true;
       }
 
-      componentWillUpdate(nextProps, nextState) {
-        console.log('componentWillUpdate', nextProps, nextState);
-      }
+      // componentWillUpdate(nextProps, nextState) {
+      //   console.log('componentWillUpdate', nextProps, nextState);
+      // }
 
       componentDidUpdate(prevProps, prevState) {
         console.log('componentDidUpdate', prevProps, prevState);
