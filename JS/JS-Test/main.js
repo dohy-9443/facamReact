@@ -1,13 +1,11 @@
-// 논리 연산자 (logical operator)
+// 삼항 연산자(ternary operator)
 
-const a = 1 === 23;
-const b = "AB" === "ABC";
-const c = false;
+const a = 1 < 2;
 
-console.log(`a : ${a}`);
-console.log(`b : ${b}`);
-console.log(`c : ${c}`);
+if (a) {
+  console.log("True");
+} else {
+  console.log("False");
+}
 
-console.log(`&&(AND) : ${a && b && c}`);
-console.log(`||(OR) : ${a || b || c}`);
-console.log(`!(NOT) : ${!a}`);
+console.log(a ? "True" : "False");
