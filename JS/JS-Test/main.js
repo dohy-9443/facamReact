@@ -1,24 +1,17 @@
-// 할당 연산자(assignment operator)
+// 비교 연산자 (comparison operator)
 
-let a = 2;
-// a = a + 1;
+const a = 3;
+const b = 3;
 
-a += 1;
+console.log(a === b);
 
-console.log(a);
+function isEqual(x, y) {
+  return x === y;
+}
 
-a -= 1;
+console.log(isEqual(1, 1));
+console.log(isEqual(a, b));
+console.log(isEqual(2, "2"));
 
-console.log(a);
-
-a *= 2;
-
-console.log(a);
-
-a /= 2;
-
-console.log(a);
-
-a %= 2;
-
-console.log(a);
+console.log(a !== b);
+console.log(a <= b);
