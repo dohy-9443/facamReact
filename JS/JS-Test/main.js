@@ -1,11 +1,15 @@
-// 삼항 연산자(ternary operator)
+import random from "./getRandom";
 
-const a = 1 < 2;
+// 조건문 (If statement)
 
-if (a) {
-  console.log("True");
+const a = random();
+
+if (a === 0) {
+  console.log(`a is 0`);
+} else if (a === 2) {
+  console.log(`a is 2`);
+} else if (a === 4) {
+  console.log(`a is 4`);
 } else {
-  console.log("False");
+  console.log(`rest...`);
 }
-
-console.log(a ? "True" : "False");
