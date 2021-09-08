@@ -1,17 +1,13 @@
-// 비교 연산자 (comparison operator)
+// 논리 연산자 (logical operator)
 
-const a = 3;
-const b = 3;
+const a = 1 === 23;
+const b = "AB" === "ABC";
+const c = false;
 
-console.log(a === b);
+console.log(`a : ${a}`);
+console.log(`b : ${b}`);
+console.log(`c : ${c}`);
 
-function isEqual(x, y) {
-  return x === y;
-}
-
-console.log(isEqual(1, 1));
-console.log(isEqual(a, b));
-console.log(isEqual(2, "2"));
-
-console.log(a !== b);
-console.log(a <= b);
+console.log(`&&(AND) : ${a && b && c}`);
+console.log(`||(OR) : ${a || b || c}`);
+console.log(`!(NOT) : ${!a}`);
