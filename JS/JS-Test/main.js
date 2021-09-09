@@ -1,11 +1,13 @@
-// 화살표 함수
-// () => {} vs function () {}
+// 즉시실행함수
+// IIFE, Immediately-Invoked Function Expression
 
-const double = function (x) {
-  return x * 2;
-};
-console.log(`double: ${double(7)}`);
+const a = 7;
+function double() {
+  console.log(a * 2);
+}
 
-const doubleArrow = (x) => ({ name: "donghyun" });
+double();
 
-console.log("doubleArrow: " + doubleArrow(7));
+(function () {
+  console.log(a * 2);
+})();
