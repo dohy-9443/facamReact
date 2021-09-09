@@ -1,21 +1,17 @@
-// 타이머 함수
-// setTimeout(함수, 시간): 일정 시간 후 함수 실행
-// setInterval(함수, 시간): 시간 간격마다 함수 실행
-// clearTimeout(): 설정된 Timeout 함수를 종료
-// clearInterval(): 설정된 Interval 함수를 종료
+// 콜백 (Callback)
+// 함수의 인수로 사용되는 함수
 
-let count = 0;
-const h2 = document.createElement("h2");
-document.body.appendChild(h2);
-const timer = setInterval(() => {
-  console.log("Hello!");
-  count++;
-}, 3000);
+// setTimeout(함수, 시간)
 
-const h1El = document.querySelector("h1");
+function timeout(callback) {
+  setTimeout(() => {
+    console.log("hello");
+    callback();
+  }, 3000);
+}
 
-h1El.addEventListener("click", () => {
-  clearInterval(timer);
-  h1El.textContent = `너가 클릭해서 hello 못봄 키키`;
-  h2.textContent = `hello는 ${count} 번 출력됨 키키`;
+timeout(() => {
+  setTimeout(() => {
+    console.log("콜백함수 내부 Done");
+  }, 1000);
 });
