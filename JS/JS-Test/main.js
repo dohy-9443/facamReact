@@ -1,17 +1,20 @@
-// 형 변환 (Type conversion)
+// 함수 복습
 
-const a = 1;
-const b = "1";
-
-console.log(a === b); // 일치 연산자
-console.log(a == b); // 동등 연산자 :: 왠만하면 쓰지마 ::
-
-// Truthy (참 같은 값)
-// True, {}, [], 1, 2, 'false', -12, '3.14' ...
-
-// Falsy (거짓 같은 값)
-// false, '', null, undefined, 0, -0, NaN(Not a Number)
-
-if (0) {
-  console.log(123);
+function sum(x, y) {
+  // function sum(매개변수, 매개변수) {}
+  return x + y;
 }
+
+const a = sum(1, 3); // sum (인수, 인수)
+const b = sum(4, 12);
+
+console.log(a);
+console.log(b);
+console.log(a + b);
+
+console.log(sum(1, 5));
+console.log(sum(4, 10));
+console.log(sum(1, 5) + sum(4, 10));
+
+// 반복적으로 사용할 거면 변수에 담아놓는 게 좋고
+// 단일적으로 한번만 쓸거면 그냥 밑에가 좋다고 한다.
