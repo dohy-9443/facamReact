@@ -1,17 +1,33 @@
-// 콜백 (Callback)
-// 함수의 인수로 사용되는 함수
+const dong = {
+  firstName: "donghyun",
+  lastName: "baek",
+  getFullName: function () {
+    return `${this.firstName} ${this.lastName}`;
+    // 여기서 this = dong
+  },
+};
 
-// setTimeout(함수, 시간)
+console.log(dong);
 
-function timeout(callback) {
-  setTimeout(() => {
-    console.log("hello");
-    callback();
-  }, 3000);
-}
+const print = dong.getFullName();
 
-timeout(() => {
-  setTimeout(() => {
-    console.log("콜백함수 내부 Done");
-  }, 1000);
-});
+console.log(print);
+
+const amy = {
+  firstName: "Amy",
+  lastName: "Clarke",
+  getFullName: function () {
+    return `${this.firstName} ${this.lastName}`;
+  },
+};
+console.log(amy.getFullName());
+
+const neo = {
+  firstName: "Neo",
+  lastName: "Smith",
+  getFullName: function () {
+    return `${this.firstName} ${this.lastName}`;
+  },
+};
+
+console.log(neo.getFullName());
