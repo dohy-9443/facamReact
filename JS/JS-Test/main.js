@@ -1,18 +1,21 @@
-// 호이스팅(Hoisting)
-// 함수 선언부가 유효범위 최상단으로 끌어올려지는 현상
+// 타이머 함수
+// setTimeout(함수, 시간): 일정 시간 후 함수 실행
+// setInterval(함수, 시간): 시간 간격마다 함수 실행
+// clearTimeout(): 설정된 Timeout 함수를 종료
+// clearInterval(): 설정된 Interval 함수를 종료
 
-const Hello = document.querySelector("h1");
+let count = 0;
+const h2 = document.createElement("h2");
+document.body.appendChild(h2);
+const timer = setInterval(() => {
+  console.log("Hello!");
+  count++;
+}, 3000);
 
-const a = 7;
+const h1El = document.querySelector("h1");
 
-Hello.addEventListener("click", () => {
-  play();
+h1El.addEventListener("click", () => {
+  clearInterval(timer);
+  h1El.textContent = `너가 클릭해서 hello 못봄 키키`;
+  h2.textContent = `hello는 ${count} 번 출력됨 키키`;
 });
-
-function play() {
-  double();
-}
-
-function double() {
-  console.log(a * 2);
-}
