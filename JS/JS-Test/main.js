@@ -1,30 +1,15 @@
-import random from "./getRandom";
+// 반복문 (For statement)
+// for (시작조건; 종료조건; 변화조건;) {}
 
-// 조건문 (Switch statement)
+const ulEl = document.querySelector("ul");
 
-const a = random();
-
-switch (a) {
-  case 0:
-    console.log(`a is 0`);
-    break;
-  case 2:
-    console.log(`a is 2`);
-    break;
-  case 4:
-    console.log(`a is 4`);
-    break;
-  default:
-    console.log(`rest...`);
-    break;
-}
-
-if (a === 0) {
-  console.log(`a is 0`);
-} else if (a === 2) {
-  console.log(`a is 2`);
-} else if (a === 4) {
-  console.log(`a is 4`);
-} else {
-  console.log(`rest...`);
+for (let i = 1; i <= 10; i++) {
+  const li = document.createElement("li");
+  li.textContent = `list-${i}`;
+  if (i % 2 === 0) {
+    li.addEventListener("click", () => {
+      console.log(li.textContent);
+    });
+  }
+  ulEl.appendChild(li);
 }
