@@ -18,3 +18,9 @@ console.log(sum(1, 5) + sum(4, 10));
 
 // 반복적으로 사용할 거면 변수에 담아놓는 게 좋고
 // 단일적으로 한번만 쓸거면 그냥 밑에가 좋다고 한다.
+
+function sum2() {
+  return arguments[0] + arguments[1];
+}
+
+console.log(sum2(3, 4));
