@@ -1,26 +1,11 @@
-// 함수 복습
+// 화살표 함수
+// () => {} vs function () {}
 
-function sum(x, y) {
-  // function sum(매개변수, 매개변수) {}
-  return x + y;
-}
+const double = function (x) {
+  return x * 2;
+};
+console.log(`double: ${double(7)}`);
 
-const a = sum(1, 3); // sum (인수, 인수)
-const b = sum(4, 12);
+const doubleArrow = (x) => ({ name: "donghyun" });
 
-console.log(a);
-console.log(b);
-console.log(a + b);
-
-console.log(sum(1, 5));
-console.log(sum(4, 10));
-console.log(sum(1, 5) + sum(4, 10));
-
-// 반복적으로 사용할 거면 변수에 담아놓는 게 좋고
-// 단일적으로 한번만 쓸거면 그냥 밑에가 좋다고 한다.
-
-function sum2() {
-  return arguments[0] + arguments[1];
-}
-
-console.log(sum2(3, 4));
+console.log("doubleArrow: " + doubleArrow(7));
