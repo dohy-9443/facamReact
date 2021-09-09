@@ -1,33 +1,19 @@
-const dong = {
-  firstName: "donghyun",
-  lastName: "baek",
-  getFullName: function () {
-    return `${this.firstName} ${this.lastName}`;
-    // 여기서 this = dong
-  },
+function User(first, last) {
+  this.firstName = first;
+  this.lastName = last;
+}
+
+// 이렇게 적으면 메모리에 딱 한번만 할당 됨
+User.prototype.getFullName = function () {
+  return `${this.firstName} ${this.lastName}`;
 };
 
-console.log(dong);
+const dong = new User("donghyun", "baek");
+const amy = new User("Amy", "Clarke");
+const neo = new User("Neo", "Smith");
+// 여기서 dong amy neo 를 인스턴스라고 함
 
-const print = dong.getFullName();
-
-console.log(print);
-
-const amy = {
-  firstName: "Amy",
-  lastName: "Clarke",
-  getFullName: function () {
-    return `${this.firstName} ${this.lastName}`;
-  },
-};
+// getFullName이라는 한번만 만들어진 녀석을 참조하는 것
+console.log(dong.getFullName());
 console.log(amy.getFullName());
-
-const neo = {
-  firstName: "Neo",
-  lastName: "Smith",
-  getFullName: function () {
-    return `${this.firstName} ${this.lastName}`;
-  },
-};
-
 console.log(neo.getFullName());
