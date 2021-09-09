@@ -1,30 +1,19 @@
-import random from "./getRandom";
-
-// 조건문 (Switch statement)
-
-const a = random();
-
-switch (a) {
-  case 0:
-    console.log(`a is 0`);
-    break;
-  case 2:
-    console.log(`a is 2`);
-    break;
-  case 4:
-    console.log(`a is 4`);
-    break;
-  default:
-    console.log(`rest...`);
-    break;
+function User(first, last) {
+  this.firstName = first;
+  this.lastName = last;
 }
 
-if (a === 0) {
-  console.log(`a is 0`);
-} else if (a === 2) {
-  console.log(`a is 2`);
-} else if (a === 4) {
-  console.log(`a is 4`);
-} else {
-  console.log(`rest...`);
-}
+// 이렇게 적으면 메모리에 딱 한번만 할당 됨
+User.prototype.getFullName = function () {
+  return `${this.firstName} ${this.lastName}`;
+};
+
+const dong = new User("donghyun", "baek");
+const amy = new User("Amy", "Clarke");
+const neo = new User("Neo", "Smith");
+// 여기서 dong amy neo 를 인스턴스라고 함
+
+// getFullName이라는 한번만 만들어진 녀석을 참조하는 것
+console.log(dong.getFullName());
+console.log(amy.getFullName());
+console.log(neo.getFullName());
