@@ -5,7 +5,7 @@
 const timer = {
   name: "donghyun",
   timeout: function () {
-    setTimeout(function () {
+    setTimeout(() => {
       console.log(this.name);
     }, 1000);
   },
