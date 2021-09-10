@@ -1,19 +1,24 @@
-function User(first, last) {
-  this.firstName = first;
-  this.lastName = last;
-}
+// this
+// 일반(Normal) 함수는 호출 위치에서 따라 this 정의!
+// 화살표(Arrow) 함수는 자신이 선언된 함수 범위에서 this 정의!
 
-// 이렇게 적으면 메모리에 딱 한번만 할당 됨
-User.prototype.getFullName = function () {
-  return `${this.firstName} ${this.lastName}`;
+const donghyun = {
+  name: "donghyun",
+  normal: function () {
+    console.log(this.name);
+  },
+  arrow: () => {
+    console.log(this.name);
+  },
+};
+donghyun.normal();
+donghyun.arrow();
+
+const amy = {
+  name: "Amy",
+  normal: donghyun.normal,
+  arrow: donghyun.arrow,
 };
 
-const dong = new User("donghyun", "baek");
-const amy = new User("Amy", "Clarke");
-const neo = new User("Neo", "Smith");
-// 여기서 dong amy neo 를 인스턴스라고 함
-
-// getFullName이라는 한번만 만들어진 녀석을 참조하는 것
-console.log(dong.getFullName());
-console.log(amy.getFullName());
-console.log(neo.getFullName());
+amy.normal();
+amy.arrow();
