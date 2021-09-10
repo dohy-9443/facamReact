@@ -8,27 +8,35 @@
 // Array: []
 // Object: {}
 
-const result = "Hello world!";
-console.log(result.indexOf("world"));
-// indexOf는 일치하는 값이 없으면 -1을 반환
-console.log(result.indexOf("false") !== -1);
-// -1을 반환해 true지만 !== 때문에 false를 반환
-console.log(result.slice(6, 11));
-// slice는 (시작index, 끝부분index인데 딱 그 직전까지)
-console.log(result.replace("world", "donghyun"));
-// replace는 (바꾸고싶은 문자, 교체되는 문자)
-console.log(result.replace(" world!", ""));
-// replace에 뒤쪽을 빈 문자열로 작성하면 제거된다.
+const pi = 3.14159265358979;
+console.log(pi);
 
-const str = "0123";
-console.log(str.length);
-// length는 갯수
+const str = pi.toFixed(2);
+// toFixed(2)는 소수점아래 2자리까지
+// (이거 쓰면 문자데이터로 바뀜)
+console.log(str);
+console.log(typeof str);
 
-const eMail = "dong944320@gmail.com";
-console.log(eMail.match(/.+(?=@)/)[0]);
-// 자세한거는 정규표현식 공부할 때
+const integer = parseInt(str);
+// parseInt는 정수형으로 바꿔줌
+const float = parseFloat(str);
+// parseFloat는 실수형으로 바꿔줌
+console.log(integer);
+console.log(float);
+console.log(typeof integer, typeof float);
 
-const trimEx = "      Hello world    ";
-
-console.log(trimEx.trim());
-// trim은 앞뒤 공백 제거
+// Math
+console.log("abs: ", Math.abs(-12));
+// abs 절대값
+console.log("min: ", Math.min(2, 8));
+// min 최소값
+console.log("max: ", Math.max(2, 8));
+// max 최대값
+console.log("ceil", Math.ceil(3.14));
+// ceil 올림
+console.log("floor: ", Math.floor(3.14));
+// floor 내림
+console.log("round: ", Math.round(3.14));
+// round 반올림
+console.log("random: ", Math.random());
+// 0 ~ 1 사이의 랜덤값
