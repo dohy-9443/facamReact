@@ -1,100 +1,34 @@
-class Vehicle {
-  constructor(name, wheel) {
-    this.name = name;
-    this.wheel = wheel;
-  }
-}
+// JS 데이터
 
-const myVehicle = new Vehicle("운송수단", 2);
-console.log(myVehicle);
+// String: '', "", ``
+// Number
+// Boolean: true, false
+// undefined
+// null
+// Array: []
+// Object: {}
 
-class Bicycle extends Vehicle {
-  constructor(name, wheel) {
-    super(name, wheel);
-  }
-}
+const result = "Hello world!";
+console.log(result.indexOf("world"));
+// indexOf는 일치하는 값이 없으면 -1을 반환
+console.log(result.indexOf("false") !== -1);
+// -1을 반환해 true지만 !== 때문에 false를 반환
+console.log(result.slice(6, 11));
+// slice는 (시작index, 끝부분index인데 딱 그 직전까지)
+console.log(result.replace("world", "donghyun"));
+// replace는 (바꾸고싶은 문자, 교체되는 문자)
+console.log(result.replace(" world!", ""));
+// replace에 뒤쪽을 빈 문자열로 작성하면 제거된다.
 
-const myBicycle = new Bicycle("자전거", 2);
-const daughtersBicycle = new Bicycle("세발자전거", 3);
-console.log(myBicycle);
-console.log(daughtersBicycle);
+const str = "0123";
+console.log(str.length);
+// length는 갯수
 
-class Car extends Vehicle {
-  constructor(name, wheel, license) {
-    super(name, wheel);
-    this.license = license;
-  }
-}
+const eMail = "dong944320@gmail.com";
+console.log(eMail.match(/.+(?=@)/)[0]);
+// 자세한거는 정규표현식 공부할 때
 
-const myCar = new Car("제네시스", 4, true);
-const daughtersCar = new Car("그랜저", 4, false);
-console.log(myCar);
-console.log(daughtersCar);
+const trimEx = "      Hello world    ";
 
-class Card {
-  constructor(shape, count) {
-    this.shape = shape;
-    this.count = count;
-  }
-  getPrint = () => {
-    return `나는 ${this.shape} 모양의 카드가 ${this.count} 장 있습니다.`;
-  };
-}
-
-class Spade extends Card {
-  constructor(shape, count) {
-    super(shape, count);
-  }
-}
-
-class Clover extends Card {
-  constructor(shape, count) {
-    super(shape, count);
-  }
-}
-
-class Heart extends Card {
-  constructor(shape, count) {
-    super(shape, count);
-  }
-}
-
-class Diamond extends Card {
-  constructor(shape, count) {
-    super(shape, count);
-  }
-}
-
-class Jocker extends Card {
-  constructor(shape, count) {
-    super(shape, count);
-  }
-}
-
-const spade = new Spade("스페이드", 13);
-const clover = new Clover("클로버", 13);
-const heart = new Heart("하트", 13);
-const diamond = new Diamond("다이아몬드", 13);
-const jocker = new Jocker("조커", 2);
-
-const cardDec = [];
-cardDec.push(spade);
-cardDec.push(clover);
-cardDec.push(heart);
-cardDec.push(diamond);
-cardDec.push(jocker);
-
-console.log(spade.getPrint());
-console.log(clover.getPrint());
-console.log(heart.getPrint());
-console.log(diamond.getPrint());
-console.log(jocker.getPrint());
-
-let total = 0;
-
-for (let i = 0; i < cardDec.length; i++) {
-  total += cardDec[i].count;
-}
-console.log(
-  `카드박스에는 ${spade.shape}가 ${spade.count} 장, ${clover.shape}가 ${clover.count} 장, ${heart.shape}가 ${heart.count} 장, ${diamond.shape}가 ${diamond.count} 장, ${jocker.shape}가 ${jocker.count} 장있고, 총 ${total} 장 들어있습니다.`
-);
+console.log(trimEx.trim());
+// trim은 앞뒤 공백 제거
