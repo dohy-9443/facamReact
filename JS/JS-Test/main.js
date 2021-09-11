@@ -47,16 +47,86 @@ fruits.forEach(function (element, index, array) {
 // 반복해서 돌리고 나온 데이터들을 반환해
 // 새로운 배열로서 b에 담는다.
 
-const a = fruits.forEach((fruit, index) => {
+const aForEach = fruits.forEach((fruit, index) => {
   console.log(`${fruit}-${index}`);
 });
-console.log(a);
+console.log(aForEach);
 
-const b = fruits.map((fruit, index) => {
+const bMap = fruits.map((fruit, index) => {
   return {
     id: index,
     name: fruit,
   };
 });
 
-console.log(b);
+console.log(bMap);
+
+// .filter()
+// true가 반환되는 아이템들만 b에 배열로 들어간다.
+
+const aFilter = numbers.map((number) => number < 3);
+console.log(aFilter);
+
+const bFilter = numbers.filter((number) => number < 3);
+console.log(bFilter);
+
+// .find() .findIndex()
+// 배열 데이터안에서 조건에 맞는 특정한 아이템을 찾을 때
+
+const aFind = fruits.find((fruit) => /^B/.test(fruit));
+// B로 시작하는 아이템을 찾는다 true일 때 반환
+console.log(aFind);
+
+const bFindIndex = fruits.findIndex((fruit) => /^B/.test(fruit));
+// B로 시작하는 아이템을 찾는다 true일 때 반환
+// 근데 얘는 배열에 몇번째 있는지
+console.log(bFindIndex);
+
+// .includes()
+
+const aIncludes = numbers.includes(3);
+// numbers에 3이 포함 되어 있냐
+console.log(aIncludes);
+
+const bIncludes = fruits.includes("DongHyun");
+// fruits에 DongHyun이 포함 되어 있냐
+console.log(bIncludes);
+
+// .push() .unshift()
+// 원본 수정 주의
+
+numbers.push(5);
+// 5를 numbers 배열의 마지막으로 넣음
+console.log(numbers);
+
+numbers.unshift(0);
+// 0을 numbers 배열의 가장 앞에 넣음
+console.log(numbers);
+
+// .reverse()
+// 원본 수정됨 주의
+// 배열의 순서를 뒤집음
+
+numbers.reverse();
+fruits.reverse();
+
+console.log(numbers);
+console.log(fruits);
+
+// .splice()
+// 원본 수정됨 주의
+
+numbers.splice(2, 1, 6);
+// numbers에 2번째 배열을 1개 지우고 거기에 3을 추가해라
+
+console.log(numbers);
+
+numbers.reverse();
+console.log(numbers);
+numbers.splice(3, 1);
+console.log(numbers);
+
+fruits.reverse();
+console.log(fruits);
+fruits.splice(2, 0, "orange");
+console.log(fruits);
