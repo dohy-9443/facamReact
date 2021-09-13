@@ -1,12 +1,37 @@
-import _ from "lodash"; // From `node_modules`!
-import getType from "./getType"; // getType.js
-import { random, user as donghyun } from "./getRandom"; // getRandom.js
-// 이름을 정해줘야되는 모듈은 꼭 {}를 감싸줘야됌
+import _ from "lodash";
 
-// user as donghuyn이라고 적으면 user: donghyun 처럼
-// user를 불러오는데 donghyun이라는 이름으로 쓸거다 라는 의미
+const usersA = [
+  { userId: "1", name: "Donghyun" },
+  { userId: "2", name: "Neo" },
+];
+const usersB = [
+  { userId: "1", name: "Donghyun" },
+  { userId: "3", name: "Amy" },
+];
+const usersC = usersA.concat(usersB);
+// 인자로 주어진 배열이나 값들을 기존 배열에 합쳐서 새 배열을 반환
+console.log("concat", usersC);
+console.log("uniqBy", _.uniqBy(usersC, "userId"));
+// 위아래 둘다 마지막 인자는 고유값으로 쓸거
+// 위에꺼는 배열데이터가 하나일 때 쓰는거
+// 아래꺼는 여러개일 때 쓰는 거
+const usersD = _.unionBy(usersA, usersB, "userId");
+console.log("unionBy", usersD);
 
-console.log(_.camelCase("the hello world"));
-console.log(getType([1, 2, 3]));
-console.log(random(), random());
-console.log(donghyun);
+console.log("--------------------");
+
+const users = [
+  { userId: "1", name: "Donghyun" },
+  { userId: "2", name: "Neo" },
+  { userId: "3", name: "Amy" },
+  { userId: "4", name: "Evan" },
+  { userId: "5", name: "Lewis" },
+];
+
+const foundUser = _.find(users, { name: "Amy" });
+const foundUserIndex = _.findIndex(users, { name: "Amy" });
+console.log(foundUser);
+console.log(foundUserIndex);
+
+_.remove(users, { name: "Donghyun" });
+console.log(users);
