@@ -1,46 +1,23 @@
-// JS 데이터
-
-// String: '', "", ``
-// Number
-// Boolean: true, false
-// undefined
-// null
-// Array: []
-// Object: {}
-
-const userAge = {
-  // key: value
-  name: "donghyun",
-  age: 27,
-};
-const userEmail = {
-  name: "donghyun",
-  email: "dong944320@gmail,com",
-};
-
-// .assign()
-// 하나 이상의 원본 객체들로부터
-// 모든 열거가능한 속성들을 대상 객체로 복사
-const target = Object.assign(userAge, userEmail);
-console.log(target);
-console.log(userAge);
-console.log(target === userAge);
-
-const a = { k: 123 };
-const b = { k: 123 };
-console.log(a === b);
+// 구조 분해 할당 (Destructuring assignment)
+// 비구조화 할당
 
 const user = {
-  name: "donghyun",
+  userName: "donghyun",
   age: 27,
   email: "dong944320@gmail.com",
+  address: "USA",
 };
+const { userName: name, age, email, address = "Korea" } = user;
+// 위에 user라는 객체에서 필요한 것을 변수로 만들어가지고
+//  꺼내다가 쓰는거
 
-const keys = Object.keys(user);
-console.log(keys);
-// ['name', 'age', 'email']
+// E.g, user.address
 
-console.log(user["email"]);
+console.log(`사용자의 이름은 ${name}입니다.`);
+console.log(`${name}의 나이는 ${age}세 입니다.`);
+console.log(`${name}의 이메일 주소는 ${email}입니다.`);
+console.log(address);
 
-const values = keys.map((key) => user[key]);
-console.log(values);
+const fruits = ["Apple", "Banana", "Cherry"];
+const [a, b, c, d] = fruits;
+console.log(a, b, c, d);
