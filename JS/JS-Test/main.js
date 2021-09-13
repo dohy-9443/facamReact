@@ -4,7 +4,7 @@ const user = {
   age: 27,
   emails: ["dong944320@gamil.com"],
 };
-const copyUser = user;
+const copyUser = Object.assign({}, user);
 console.log(copyUser === user);
 
 user.age = 26;
