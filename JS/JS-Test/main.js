@@ -1,23 +1,18 @@
-// 구조 분해 할당 (Destructuring assignment)
-// 비구조화 할당
+// 전개 연산자 (Spread)
 
-const user = {
-  userName: "donghyun",
-  age: 27,
-  email: "dong944320@gmail.com",
-  address: "USA",
-};
-const { userName: name, age, email, address = "Korea" } = user;
-// 위에 user라는 객체에서 필요한 것을 변수로 만들어가지고
-//  꺼내다가 쓰는거
+const fruits = ["Apple", "Banana", "Cherry", "Dragon fruit"];
+console.log(fruits);
+console.log(...fruits);
+// console.log('Apple', 'Banana', 'Cherry')
 
-// E.g, user.address
+// function toObject(a, b, ...c) { // ...c는 rest parameter
+//   return {
+//     apple: a,
+//     banana: b,
+//     rest: c,
+//   };
+// }
 
-console.log(`사용자의 이름은 ${name}입니다.`);
-console.log(`${name}의 나이는 ${age}세 입니다.`);
-console.log(`${name}의 이메일 주소는 ${email}입니다.`);
-console.log(address);
+const toObject = (a, b, ...c) => ({ a, b, c });
 
-const fruits = ["Apple", "Banana", "Cherry"];
-const [a, b, c, d] = fruits;
-console.log(a, b, c, d);
+console.log(toObject(...fruits));
