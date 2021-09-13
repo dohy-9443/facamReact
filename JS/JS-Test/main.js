@@ -1,22 +1,12 @@
-import _ from "lodash";
+import _ from "lodash"; // From `node_modules`!
+import getType from "./getType"; // getType.js
+import { random, user as donghyun } from "./getRandom"; // getRandom.js
+// 이름을 정해줘야되는 모듈은 꼭 {}를 감싸줘야됌
 
-// 얕은 복사(Shallow copy), 깊은 복사(Deep copy)
-const user = {
-  name: "donghyun",
-  age: 27,
-  emails: ["dong944320@gamil.com"],
-};
-const copyUser = _.cloneDeep(user);
-console.log(copyUser === user);
+// user as donghuyn이라고 적으면 user: donghyun 처럼
+// user를 불러오는데 donghyun이라는 이름으로 쓸거다 라는 의미
 
-user.age = 26;
-console.log("user", user);
-console.log("copyUser", copyUser);
-
-console.log("---------------");
-console.log("---------------");
-
-user.emails.push("dong_hyun95@hanmail.net");
-console.log(user.emails === copyUser.emails);
-console.log("user", user);
-console.log("copyUser", copyUser);
+console.log(_.camelCase("the hello world"));
+console.log(getType([1, 2, 3]));
+console.log(random(), random());
+console.log(donghyun);
