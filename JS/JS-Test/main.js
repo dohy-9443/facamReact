@@ -13,8 +13,11 @@ const user = {
 console.log("user", user);
 
 const str = JSON.stringify(user);
+// javaScript 값이나 객체를 JSON 문자열로 변환
 console.log("str", str);
 console.log(typeof str);
 
 const obj = JSON.parse(str);
+// JSON 문자열의 구문을 분석하고,
+// 그 결과에서 JavaScript 값이나 객체를 생성
 console.log("obj", obj);
