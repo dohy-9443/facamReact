@@ -13,3 +13,4 @@ function fetchMobies() {
 fetchMobies();
 
 // 커밋해보기
+// 변경사항
