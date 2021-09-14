@@ -11,3 +11,5 @@ function fetchMobies() {
 }
 
 fetchMobies();
+
+// 커밋해보기
