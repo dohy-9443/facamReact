@@ -1,3 +1,5 @@
+import blocks from "./blocks.js";
+
 // DOM
 const playground = document.querySelector(".playground > ul");
 
@@ -10,35 +12,6 @@ let score = 0;
 let duration = 500;
 let downInterval;
 let tempMovingItem;
-
-const blocks = {
-  tree: [
-    [
-      [0, 1],
-      [1, 0],
-      [1, 1],
-      [2, 1],
-    ],
-    [
-      [0, 1],
-      [1, 0],
-      [1, 1],
-      [1, 2],
-    ],
-    [
-      [1, 2],
-      [0, 1],
-      [1, 1],
-      [2, 1],
-    ],
-    [
-      [1, 2],
-      [1, 0],
-      [1, 1],
-      [2, 1],
-    ],
-  ],
-};
 
 const movingItem = {
   type: "tree",
@@ -115,6 +88,15 @@ function seizeBlock() {
     moving.classList.remove("moving");
     moving.classList.add("seized");
   });
+  generateNewBlock();
+}
+
+function generateNewBlock() {
+  movingItem.top = 0;
+  movingItem.left = 3;
+  movingItem.direction = 0;
+  tempMovingItem = { ...movingItem };
+  renderBlocks();
 }
 
 function checkEmpty(target) {
