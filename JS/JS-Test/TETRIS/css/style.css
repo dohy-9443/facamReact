@@ -14,6 +14,30 @@ body {
   overflow: hidden;
 }
 
+.game-text {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  left: 0;
+  top: 0;
+  color: #fff;
+  font-size: 50px;
+}
+
+.game-text button {
+  margin-top: 30px;
+  padding: 0.5rem 1rem;
+  color: #fff;
+  background: salmon;
+  border: none;
+  cursor: pointer;
+}
+
 .score {
   text-align: center;
   font-size: 36px;
@@ -43,4 +67,47 @@ body {
 
 .tree {
   background: #67c23a;
+}
+
+.bar {
+  background: salmon;
+}
+
+.zee {
+  background: #e6a23c;
+}
+
+.elLeft {
+  background: #8e44ad;
+}
+
+.elRight {
+  background: #16a085;
+}
+
+.square {
+  background: #fdc4fd;
+}
+
+.reverseZee {
+  background: #fff77f;
+}
+
+.playBtn {
+  margin: 50px auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 250px;
+}
+.playBtn button {
+  padding: 2rem;
+  border: none;
+  background: salmon;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  cursor: pointer;
 }
