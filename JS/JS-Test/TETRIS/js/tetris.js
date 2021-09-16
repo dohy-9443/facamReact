@@ -5,6 +5,11 @@ const playground = document.querySelector(".playground > ul");
 const gameText = document.querySelector(".game-text");
 const scoreDisplay = document.querySelector(".score");
 const restartButton = document.querySelector(".game-text > button");
+const spaceBtn = document.querySelector(".space");
+const changeBtn = document.querySelector(".change");
+const leftBtn = document.querySelector(".leftBtn");
+const rightBtn = document.querySelector(".rightBtn");
+const bottomBtn = document.querySelector(".bottomBtn");
 
 // Setting
 const GAME_ROWS = 20;
@@ -206,3 +211,9 @@ restartButton.addEventListener("click", () => {
   scoreDisplay.innerText = score;
   init();
 });
+
+spaceBtn.addEventListener("click", () => dropBlock());
+changeBtn.addEventListener("click", () => changeDirection());
+leftBtn.addEventListener("click", () => moveBlock("left", -1));
+rightBtn.addEventListener("click", () => moveBlock("left", 1));
+bottomBtn.addEventListener("click", () => moveBlock("top", 1));
