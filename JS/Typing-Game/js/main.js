@@ -17,6 +17,7 @@ init();
 
 // 게임 세팅
 function init() {
+  buttonChange("게임 로딩중...");
   getWords();
   wordInput.addEventListener("input", checkMatch);
 }
@@ -55,8 +56,22 @@ function checkStatus() {
 
 // 단어를 불러올 함수
 function getWords() {
-  words = ["Apple", "Banana", "Cherry", "Durian"];
-  buttonChange("게임시작");
+  axios
+    .get("https://random-word-api.herokuapp.com/all")
+    .then(function (response) {
+      // handle success
+
+      response.data.forEach((word) => {
+        if (word.length < 10) {
+          words.push(word);
+        }
+      });
+      buttonChange("게임시작");
+    })
+    .catch(function (error) {
+      // handle error
+      console.log(error);
+    });
 }
 
 // 단어 체크 함수
