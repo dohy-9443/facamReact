@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>air datepicker</title>
+    <link
+      rel="stylesheet"
+      href="./air-datepicker/dist/css/datepicker.min.css"
+    />
+    <script src="./jquery-3.1.1.min.js"></script>
+    <script src="./air-datepicker/dist/js/datepicker.min.js"></script>
+    <script src="./air-datepicker/dist/js/i18n/datepicker.ko.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      .double div {
+        float: left;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="single">
+      <input
+        id="datepicker1"
+        data-min-view="years"
+        data-view="years"
+        data-date-format="yyyy"
+        type="text"
+      />
+    </div>
+
+    <div class="single">
+      <input
+        id="datepicker2"
+        data-min-view="months"
+        data-view="months"
+        data-date-format="mm"
+        type="text"
+      />
+    </div>
+
+    <div class="single">
+      <input id="datepicker3" type="text" />
+    </div>
+
+    <div class="single">
+      <input
+        id="datepicker4"
+        data-min-view="months"
+        data-view="months"
+        data-date-format="yyyy MM"
+        type="text"
+      />
+    </div>
+
+    <div class="single">
+      <input id="datepicker5" data-date-format="mm dd" type="text" />
+    </div>
+
+    <script>
+      //한개만 단순하게 만들때
+      $("#datepicker1").datepicker({
+        language: "ko",
+        dateFormat: "yyyy",
+      });
+
+      $("#datepicker2").datepicker({
+        language: "ko",
+        dateFormat: "mm",
+      });
+
+      $("#datepicker3").datepicker({
+        language: "ko",
+        dateFormat: "dd",
+      });
+
+      $("#datepicker4").datepicker({
+        language: "ko",
+      });
+
+      $("#datepicker5").datepicker({
+        language: "ko",
+      });
+    </script>
+  </body>
+</html>
