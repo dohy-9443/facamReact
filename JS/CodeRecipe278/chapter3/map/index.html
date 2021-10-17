@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>map 연습</title>
+  <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=2815c2d3beeb3b07f4a36c887cef96ad&query=coords&libraries=services"></script>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <header></header>
+
+  <section class="section">
+    <div class="map_wrap">
+      <div id="map"></div>
+      <div id="menu_wrap" class="bg_white">
+        <div class="option">
+          <div>
+            <form onsubmit="searchPlaces(); return false;" >
+              <input type="text" value="국토교통부" id="keyword" size="15"> 
+              <button id="search-btn">검색</button> 
+            </form>
+          </div>
+        </div>
+        <hr>
+        <ul id="placesList"></ul>
+        <div id="pagination"></div>
+      </div>
+    </div>
+  </section>
+
+<script src="./main.js"></script> 
+</body>
+</html>
